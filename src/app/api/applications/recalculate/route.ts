@@ -2,6 +2,7 @@ import { connectMongoDb } from "@/server/lib/mongodb";
 import { ApplicationModel } from "@/server/models";
 import { NextResponse } from "next/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { Job } from "@/server/types";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
@@ -101,7 +102,7 @@ export async function POST() {
           continue;
         }
 
-        const job = application.jobId as any;
+        const job = application.jobId as Job;
         const chunks = chunkText(application.extractedText, 20000);
         const aiResults: AiResult[] = [];
 

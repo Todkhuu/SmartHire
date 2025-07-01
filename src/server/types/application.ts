@@ -1,3 +1,5 @@
+import { Job } from "./job";
+
 export interface AiSummary {
   firstname: string;
   lastname: string;
@@ -9,7 +11,7 @@ export type ApplicationStatus = "shortlisted" | "pending";
 
 export interface Application {
   _id: string;
-  jobId: string;
+  jobId: Job;
   cvUrl: string;
   extractedText: string;
   matchPercentage: number;
