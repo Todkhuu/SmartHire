@@ -24,7 +24,7 @@ import { TextItem, TextMarkedContent } from "pdfjs-dist/types/src/display/api";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { GlobalWorkerOptions } from "pdfjs-dist";
-import * as pdfjsLib from "pdfjs-dist";
+import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf";
 
 import FileUpload from "@/components/CloudinaryUpload";
 
