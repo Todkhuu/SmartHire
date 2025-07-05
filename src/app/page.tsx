@@ -19,14 +19,13 @@ import {
 } from "@/components/ui/select";
 import { Building2, Loader2, Briefcase, FileText, Send } from "lucide-react";
 import axios from "axios";
+import CloudinaryUpload from "@/components/CloudinaryUpload";
 import { Job } from "@/server/types";
 import { TextItem, TextMarkedContent } from "pdfjs-dist/types/src/display/api";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { GlobalWorkerOptions } from "pdfjs-dist";
 import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf";
-
-import FileUpload from "@/components/CloudinaryUpload";
 
 const cleanText = (text: string): string => {
   return text
@@ -384,7 +383,7 @@ export default function Home() {
               )}
             </CardContent>
           </Card>
-          <FileUpload handleFile={handleFile} />
+          <CloudinaryUpload handleFile={handleFile} />
           <div className="flex justify-end mt-4">
             <Button
               type="submit"
